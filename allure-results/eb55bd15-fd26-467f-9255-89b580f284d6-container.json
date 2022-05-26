@@ -1,1 +1,0 @@
-{"uuid":"eb55bd15-fd26-467f-9255-89b580f284d6","name":"com.ui.tests.carbonlibre.CategoriesTest","children":["ce9c2c36-c519-4e4f-a9b8-bd5c46263c04"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1652743096942,"stop":1652743100187}],"afters":[],"start":1652743096860,"stop":1652743103613}
