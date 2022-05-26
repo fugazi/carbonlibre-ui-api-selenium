@@ -41,9 +41,9 @@ The website under test was MercadoLibre e-commerce website [here](https://www.me
     * Scenario 5:
         * Test to verify the "Baby" category workflow
     * Scenario 6:
-           * Test to verify the Logo Page is displayed
+        * Test to verify the Logo Page is displayed
     * Scenario 7:
-              * Test to verify the Product Page with the product details
+        * Test to verify the Product Page with the product details
 5. REST API tests has the following scenarios:
     * Scenario 1:
         * Test to get the product by name
