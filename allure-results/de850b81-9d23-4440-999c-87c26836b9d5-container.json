@@ -1,1 +1,0 @@
-{"uuid":"de850b81-9d23-4440-999c-87c26836b9d5","name":"com.ui.tests.carbonlibre.CategoriesTest","children":["1e2cff6a-c1eb-4b77-b4da-db3dfd128de9"],"befores":[],"afters":[{"name":"tearDown","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1652669975738,"stop":1652669975739}],"start":1652669970856,"stop":1652669975746}

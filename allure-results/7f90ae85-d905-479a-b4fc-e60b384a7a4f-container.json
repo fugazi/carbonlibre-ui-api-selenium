@@ -1,1 +1,0 @@
-{"uuid":"7f90ae85-d905-479a-b4fc-e60b384a7a4f","name":"com.api.tests.carbonlibre.RestfulApiTest","children":["5e6f4034-3625-419c-8228-fe9e088ff7bb"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1653353807430,"stop":1653353808391}],"afters":[],"start":1653353807332,"stop":1653353811327}
