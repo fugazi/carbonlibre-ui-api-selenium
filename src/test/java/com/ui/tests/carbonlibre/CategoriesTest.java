@@ -1,16 +1,16 @@
 package com.ui.tests.carbonlibre;
 
-import com.ui.tests.carbonlibre.Pages.CategoriesPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import static com.ui.tests.carbonlibre.BaseUrl.getBaseUrl;
+import static org.assertj.core.api.SoftAssertions.assertSoftly;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import org.testng.annotations.AfterTest;
 
-import static com.ui.tests.carbonlibre.BaseUrl.getBaseUrl;
-import static org.assertj.core.api.SoftAssertions.assertSoftly;
+import com.ui.tests.carbonlibre.Pages.CategoriesPage;
 
 public class CategoriesTest {
     public WebDriver driver;
@@ -23,7 +23,6 @@ public class CategoriesTest {
 
     @BeforeClass
     void setUp() {
-        WebDriverManager.edgedriver().setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
     }
@@ -40,11 +39,9 @@ public class CategoriesTest {
     @Test(description = "Smoke Test")
     void testHomePage(){
         categoriesPage = new CategoriesPage(driver);
-        assertSoftly(softly -> {
-            softly.assertThat(categoriesPage.isLogoDisplayed())
-                    .describedAs("Logo is displayed")
-                    .isTrue();
-        });
+        assertSoftly(softly -> softly.assertThat(categoriesPage.isLogoDisplayed())
+                .describedAs("Logo is displayed")
+                .isTrue());
     }
 
     /**
