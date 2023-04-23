@@ -7,7 +7,7 @@
 #    "username" : "admin",
 #    "password" : "password123"
 #}'
-POST https://restful-booker.herokuapp.com/auth
+POST {{host}}/auth
 Content-Type: application/json
 
 {
@@ -17,11 +17,11 @@ Content-Type: application/json
 
 ### Get all Bookins IDs
 # curl -i https://restful-booker.herokuapp.com/booking
-GET https://restful-booker.herokuapp.com/booking
+GET {{host}}/booking
 
 ### Get Booking by ID
 # curl -i https://restful-booker.herokuapp.com/booking/485
-GET https://restful-booker.herokuapp.com/booking/5946
+GET {{host}}/booking/242
 Accept: application/json
 
 ### Create a Booking
@@ -39,7 +39,7 @@ Accept: application/json
 #    },
 #    "additionalneeds" : "Breakfast"
 #}'
-POST https://restful-booker.herokuapp.com/booking
+POST {{host}}/booking
 Content-Type: application/json
 Accept: application/json
 
@@ -72,9 +72,9 @@ Accept: application/json
 #    },
 #    "additionalneeds" : "Breakfast"
 #}'
-PUT https://restful-booker.herokuapp.com/booking/242
+PUT {{host}}/booking/242
 Accept: application/json
-Cookie: token=5854d6c0f61444b
+Cookie: token={{auth_token}}
 Content-Type: application/json
 
 {
@@ -99,9 +99,9 @@ Content-Type: application/json
 #    "firstname" : "James",
 #    "lastname" : "Brown"
 #}'
-PATCH https://restful-booker.herokuapp.com/booking/242
+PATCH {{host}}/booking/242
 Accept: application/json
-Cookie: token=5854d6c0f61444b
+Cookie: token={{auth_token}}
 Content-Type: application/json
 
 {
@@ -114,8 +114,8 @@ Content-Type: application/json
 #  https://restful-booker.herokuapp.com/booking/1
 #  -H 'Content-Type: application/json'
 #  -H 'Cookie: token=abc123'
-DELETE https://restful-booker.herokuapp.com/booking/242
-Cookie: token=5854d6c0f61444b
+DELETE {{host}}/booking/242
+Cookie: token={{auth_token}}
 Content-Type: application/json
 
 ###
