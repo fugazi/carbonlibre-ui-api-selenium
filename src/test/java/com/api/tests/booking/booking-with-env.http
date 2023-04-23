@@ -15,14 +15,32 @@ Content-Type: application/json
   "password": "password123"
 }
 
+> {%
+    client.test( "Request executed successfully", function () {
+        client.assert( response.status === 200, "Response status is not 200" );
+    } );
+%}
+
 ### Get all Bookins IDs
 # curl -i https://restful-booker.herokuapp.com/booking
 GET {{host}}/booking
+
+> {%
+    client.test( "Request executed successfully", function () {
+        client.assert( response.status === 200, "Response status is not 200" );
+    } );
+%}
 
 ### Get Booking by ID
 # curl -i https://restful-booker.herokuapp.com/booking/485
 GET {{host}}/booking/242
 Accept: application/json
+
+> {%
+    client.test( "Request executed successfully", function () {
+        client.assert( response.status === 200, "Response status is not 200" );
+    } );
+%}
 
 ### Create a Booking
 # curl -X POST
@@ -55,6 +73,17 @@ Accept: application/json
   "additionalneeds": "Breakfast"
 }
 
+> {%
+    client.test( "Request executed successfully", function () {
+        client.assert( response.status === 200, "Response status is not 200" );
+    } );
+
+    client.test( "Response content-type is json", function () {
+        var type = response.contentType.mimeType;
+        client.assert( type === "application/json", "Expected 'application/json' but received '" + type + "'" );
+    } );
+%}
+
 ### Update an existing Booking
 # curl -X PUT
 #  https://restful-booker.herokuapp.com/booking/6608
@@ -72,7 +101,7 @@ Accept: application/json
 #    },
 #    "additionalneeds" : "Breakfast"
 #}'
-PUT {{host}}/booking/242
+PUT {{host}}/booking/937
 Accept: application/json
 Cookie: token={{auth_token}}
 Content-Type: application/json
@@ -89,6 +118,17 @@ Content-Type: application/json
   "additionalneeds": "Breakfast"
 }
 
+> {%
+    client.test( "Request executed successfully", function () {
+        client.assert( response.status === 200, "Response status is not 200" );
+    } );
+
+    client.test( "Response content-type is json", function () {
+        var type = response.contentType.mimeType;
+        client.assert( type === "application/json", "Expected 'application/json' but received '" + type + "'" );
+    } );
+%}
+
 ### Update a partial Booking
 # curl -X PATCH
 #  https://restful-booker.herokuapp.com/booking/1
@@ -99,7 +139,7 @@ Content-Type: application/json
 #    "firstname" : "James",
 #    "lastname" : "Brown"
 #}'
-PATCH {{host}}/booking/242
+PATCH {{host}}/booking/937
 Accept: application/json
 Cookie: token={{auth_token}}
 Content-Type: application/json
@@ -109,14 +149,37 @@ Content-Type: application/json
   "lastname": "Simpson"
 }
 
+> {%
+    client.test( "Request executed successfully", function () {
+        client.assert( response.status === 200, "Response status is not 200" );
+    } );
+
+    client.test( "Response content-type is json", function () {
+        var type = response.contentType.mimeType;
+        client.assert( type === "application/json", "Expected 'application/json' but received '" + type + "'" );
+    } );
+%}
+
 ### Delete a Booking by ID
 # curl -X DELETE
 #  https://restful-booker.herokuapp.com/booking/1
 #  -H 'Content-Type: application/json'
 #  -H 'Cookie: token=abc123'
-DELETE {{host}}/booking/242
+DELETE {{host}}/booking/937
 Cookie: token={{auth_token}}
 Content-Type: application/json
+
+> {%
+    client.test( "Request executed successfully", function () {
+        client.assert( response.status === 201, "Response status is not 201" );
+    } );
+
+    client.test( "Response content-type is json", function () {
+        var type = response.contentType.mimeType;
+        client.assert( type === "text/plain", "Expected 'text/plain' but received '" + type + "'" );
+    } );
+%}
+
 
 ###
 
