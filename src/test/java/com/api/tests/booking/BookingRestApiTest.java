@@ -1,4 +1,4 @@
-package com.api.tests.carbonlibre;
+package com.api.tests.booking;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.notNullValue;

@@ -1,6 +1,6 @@
-package com.api.tests.carbonlibre.bodys;
+package com.api.tests.booking.bodys;
 
-import com.api.tests.carbonlibre.entities.Bookingdates;
+import com.api.tests.booking.entities.Bookingdates;
 
 public class BookingBody {
     private String firstname;
