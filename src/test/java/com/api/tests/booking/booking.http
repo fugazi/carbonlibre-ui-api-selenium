@@ -1,6 +1,7 @@
 ### Create Auth token
 # https://restful-booker.herokuapp.com/apidoc/index.html
 # https://www.youtube.com/@powertester5596/videos
+# Parse JSON: https://app.quicktype.io
 # curl -X POST
 #  https://restful-booker.herokuapp.com/auth
 #  -H 'Content-Type: application/json'
