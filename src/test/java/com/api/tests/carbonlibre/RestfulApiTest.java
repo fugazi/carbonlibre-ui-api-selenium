@@ -1,10 +1,10 @@
 package com.api.tests.carbonlibre;
 
-import org.testng.annotations.Test;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
+
+import org.testng.annotations.Test;
 
 public class RestfulApiTest extends BaseSetup {
 
@@ -20,10 +20,11 @@ public class RestfulApiTest extends BaseSetup {
         given().get("/sites/MLA/search?q=" + SEARCH_PRODUCT)
                 .then().statusCode(200)
                 .and()
-                .assertThat().body("query", equalTo(SEARCH_PRODUCT))
                 .assertThat().body("site_id", equalTo("MLA"))
-                .assertThat().body("paging.primary_results", equalTo(1000))
-                .assertThat().body("paging.limit", equalTo(50));
+                .assertThat().body("query", equalTo("Bicicleta"))
+                .assertThat().body("results.id[1]", equalTo("MLA1319801763"))
+                .assertThat().body("results.price[0]", equalTo(75093))
+                .assertThat().body("paging.primary_results", equalTo(1000));
     }
 
     /**
@@ -36,11 +37,11 @@ public class RestfulApiTest extends BaseSetup {
                 .then().statusCode(200)
                 .and()
                 .assertThat().body("id", equalTo(PRODUCT_ID))
-                .assertThat().body("site_id", equalTo("MLA"))
+                .assertThat().body("currency_id", equalTo("ARS"))
                 .assertThat().body("title", notNullValue())
                 .assertThat().body("price", notNullValue())
                 .assertThat().body("currency_id", notNullValue())
                 .assertThat().body("accepts_mercadopago", notNullValue())
-                .assertThat().body("shipping.free_methods", notNullValue());
+                .assertThat().body("shipping.free_shipping", notNullValue());
     }
 }
