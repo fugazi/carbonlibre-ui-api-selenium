@@ -16,13 +16,13 @@ Content-Type: application/json
   "password": "password123"
 }
 
-### Get all Bookins IDs
+### Get all Bookings IDs
 # curl -i https://restful-booker.herokuapp.com/booking
 GET https://restful-booker.herokuapp.com/booking
 
 ### Get Booking by ID
 # curl -i https://restful-booker.herokuapp.com/booking/485
-GET https://restful-booker.herokuapp.com/booking/5946
+GET https://restful-booker.herokuapp.com/booking/3548
 Accept: application/json
 
 ### Create a Booking
@@ -115,8 +115,8 @@ Content-Type: application/json
 #  https://restful-booker.herokuapp.com/booking/1
 #  -H 'Content-Type: application/json'
 #  -H 'Cookie: token=abc123'
-DELETE https://restful-booker.herokuapp.com/booking/242
-Cookie: token=5854d6c0f61444b
+DELETE https://restful-booker.herokuapp.com/booking/4508
+Cookie: token=fd403693015cd2a
 Content-Type: application/json
 
 ###
