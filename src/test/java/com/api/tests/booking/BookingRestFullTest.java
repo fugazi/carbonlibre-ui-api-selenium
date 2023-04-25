@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 
 import com.api.tests.booking.bodys.AuthTokenBody;
 import com.api.tests.booking.bodys.BookingBody;
-import com.api.tests.booking.utility.CreateAuthTokenRequest;
-import com.api.tests.booking.utility.CreateBookingRequest;
-import com.api.tests.booking.utility.GetAllBookingsRequest;
+import com.api.tests.booking.requests.CreateAuthTokenRequest;
+import com.api.tests.booking.requests.CreateBookingRequest;
+import com.api.tests.booking.requests.GetAllBookingsRequest;
 
 public class BookingRestFullTest {
 

@@ -1,4 +1,4 @@
-package com.api.tests.booking.utility;
+package com.api.tests.booking.requests;
 
 import static io.restassured.RestAssured.given;
 

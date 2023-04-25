@@ -3,7 +3,7 @@ package com.api.tests.booking;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.api.tests.booking.utility.GetAllBookingsRequest;
+import com.api.tests.booking.requests.GetAllBookingsRequest;
 
 public class GetAllBookingsTest {
 

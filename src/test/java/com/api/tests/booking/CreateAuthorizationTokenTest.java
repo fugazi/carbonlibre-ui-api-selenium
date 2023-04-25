@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.api.tests.booking.bodys.AuthTokenBody;
-import com.api.tests.booking.utility.CreateAuthTokenRequest;
+import com.api.tests.booking.requests.CreateAuthTokenRequest;
 
 public class CreateAuthorizationTokenTest {
 

@@ -1,26 +1,26 @@
-package com.api.tests.booking.utility;
+package com.api.tests.booking.requests;
 
 import static io.restassured.RestAssured.given;
 
 import io.restassured.response.Response;
 
-import com.api.tests.booking.bodys.BookingBody;
+import com.api.tests.booking.bodys.AuthTokenBody;
 
-public class CreateBookingRequest {
+public class CreateAuthTokenRequest {
     private static final String BASE_URI = "https://restful-booker.herokuapp.com";
 
     /**
-     * This request will create a booking
+     * This request will create Authorization Token
      */
-    public static Response newBookingRequest(BookingBody bookingBody) {
+    public static Response newAuthTokenRequest(AuthTokenBody authTokenBody) {
         return given()
                 .header("Content-Type", "application/json")
                 .header("Accept", "application/json")
                 .baseUri(BASE_URI)
-                .body(bookingBody)
+                .body(authTokenBody)
                 .log()
                 .all()
-                .when().post("/booking")
+                .when().post("/auth")
                 .then()
                 .and()
                 .log()

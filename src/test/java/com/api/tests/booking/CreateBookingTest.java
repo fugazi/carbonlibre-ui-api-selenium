@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.api.tests.booking.bodys.BookingBody;
-import com.api.tests.booking.utility.CreateBookingRequest;
+import com.api.tests.booking.requests.CreateBookingRequest;
 
 public class CreateBookingTest {
 
