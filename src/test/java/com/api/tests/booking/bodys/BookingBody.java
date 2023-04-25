@@ -1,12 +1,18 @@
 package com.api.tests.booking.bodys;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import com.api.tests.booking.entities.BookingDates;
 
 @Slf4j
 @Data
+@NoArgsConstructor
+@Builder(setterPrefix = "set")
+@AllArgsConstructor
 public class BookingBody {
     private String firstname;
     private String lastname;
@@ -16,19 +22,20 @@ public class BookingBody {
     private String additionalneeds;
 
     public static BookingBody getInstance() {
-        BookingBody bookingBody = new BookingBody();
-        bookingBody.setFirstname("Shakira");
-        bookingBody.setLastname("Colombia");
-        bookingBody.setTotalprice(1985);
-        bookingBody.setDepositpaid(true);
+        BookingDates bookingDate = BookingDates.builder()
+                .setCheckin("2023-01-01")
+                .setCheckout("2023-04-27")
+                .build();
+        BookingBody bookingBody = BookingBody.builder()
+                .setFirstname("Shakira")
+                .setLastname("Colombia")
+                .setTotalprice(1985)
+                .setDepositpaid(true)
+                .setBookingdates(bookingDate)
+                .setAdditionalneeds("Dinner")
+                .build();
 
-        BookingDates bookingDate = new BookingDates();
-        bookingDate.setCheckin("2023-01-01");
-        bookingDate.setCheckout("2023-04-27");
-        bookingBody.setBookingdates(bookingDate);
-        bookingBody.setAdditionalneeds("Dinner");
-
-        log.info("bookingBody: {}", bookingBody );
+        log.info("bookingBody: {}", bookingBody);
         return bookingBody;
     }
 }
