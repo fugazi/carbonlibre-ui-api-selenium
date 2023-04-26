@@ -10,6 +10,7 @@ import com.api.tests.booking.bodys.BookingBody;
 import com.api.tests.booking.requests.CreateAuthTokenRequest;
 import com.api.tests.booking.requests.CreateBookingRequest;
 import com.api.tests.booking.requests.GetAllBookingsRequest;
+import com.api.tests.booking.requests.GetBookingIdRequest;
 
 public class BookingRestFullTest {
 
@@ -44,5 +45,16 @@ public class BookingRestFullTest {
         GetAllBookingsRequest response = new GetAllBookingsRequest();
         response.newGetAllBookingsIdRequest();
         Assert.assertEquals(response.newGetAllBookingsIdRequest().getStatusCode(), 200);
+    }
+
+    /**
+     * This test will get a booking by id
+     * GET <a href="https://restful-booker.herokuapp.com/booking/">/booking/{id}</a>
+     */
+    @Test(description = "Regression Test")
+    void getBookingIdTest() {
+        GetBookingIdRequest response = new GetBookingIdRequest();
+        response.newGetBookingIdRequest();
+        Assert.assertEquals(response.newGetBookingIdRequest().getStatusCode(), 200);
     }
 }
