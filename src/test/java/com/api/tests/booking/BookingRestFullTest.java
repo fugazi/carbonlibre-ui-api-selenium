@@ -7,10 +7,12 @@ import org.testng.annotations.Test;
 
 import com.api.tests.booking.bodys.AuthTokenBody;
 import com.api.tests.booking.bodys.BookingBody;
+import com.api.tests.booking.bodys.BookingBodyUpdate;
 import com.api.tests.booking.requests.CreateAuthTokenRequest;
 import com.api.tests.booking.requests.CreateBookingRequest;
 import com.api.tests.booking.requests.GetAllBookingsRequest;
 import com.api.tests.booking.requests.GetBookingIdRequest;
+import com.api.tests.booking.requests.UpdateExistingBookingRequest;
 
 public class BookingRestFullTest {
 
@@ -56,5 +58,15 @@ public class BookingRestFullTest {
         GetBookingIdRequest response = new GetBookingIdRequest();
         response.newGetBookingIdRequest();
         Assert.assertEquals(response.newGetBookingIdRequest().getStatusCode(), 200);
+    }
+
+    /**
+     * This test will update an existing booking and verify that the booking was updated successfully.
+     */
+    @Test(description = "Regression Test")
+    void updateExistingBookingTest() {
+        BookingBodyUpdate bookingBodyUpdate = BookingBodyUpdate.getInstance();
+        Response response = UpdateExistingBookingRequest.newUpdateExistingBookingRequest(bookingBodyUpdate);
+        Assert.assertEquals(response.getStatusCode(), 200);
     }
 }
