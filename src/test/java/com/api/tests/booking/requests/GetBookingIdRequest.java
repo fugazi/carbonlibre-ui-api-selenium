@@ -13,10 +13,12 @@ public class GetBookingIdRequest {
      */
     public Response newGetBookingIdRequest() {
         return given()
+                .header("Accept", "application/json")
                 .baseUri(BASE_URI)
+                .pathParam("id", BOOKING_ID)
                 .log()
                 .all()
-                .when().get("/booking/" + BOOKING_ID)
+                .when().get("/booking/{id}")
                 .then()
                 .and()
                 .log()

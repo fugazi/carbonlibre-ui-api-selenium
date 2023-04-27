@@ -12,6 +12,7 @@ public class GetAllBookingsRequest {
      */
     public Response newGetAllBookingsIdRequest() {
         return given()
+                .header("Accept", "application/json")
                 .baseUri(BASE_URI)
                 .log()
                 .all()
