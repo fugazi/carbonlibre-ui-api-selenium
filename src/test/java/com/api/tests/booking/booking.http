@@ -23,7 +23,7 @@ GET https://restful-booker.herokuapp.com/booking
 
 ### Get Booking by ID
 # curl -i https://restful-booker.herokuapp.com/booking/485
-GET https://restful-booker.herokuapp.com/booking/1233
+GET https://restful-booker.herokuapp.com/booking/3270
 Accept: application/json
 
 ### Create a Booking
@@ -74,9 +74,9 @@ Accept: application/json
 #    },
 #    "additionalneeds" : "Breakfast"
 #}'
-PUT https://restful-booker.herokuapp.com/booking/242
+PUT https://restful-booker.herokuapp.com/booking/3270
 Accept: application/json
-Cookie: token=5854d6c0f61444b
+Cookie: token=fb825c9ba3856cc
 Content-Type: application/json
 
 {
