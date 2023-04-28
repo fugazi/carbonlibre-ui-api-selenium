@@ -6,7 +6,7 @@ import io.restassured.response.Response;
 
 public class GetBookingIdRequest {
     private static final String BASE_URI = "https://restful-booker.herokuapp.com";
-    private static final String BOOKING_ID = "887";
+    private static final String BOOKING_ID = "7478";
 
     /**
      * This request will get a booking by id

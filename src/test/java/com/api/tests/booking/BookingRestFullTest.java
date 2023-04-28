@@ -68,5 +68,7 @@ public class BookingRestFullTest {
         BookingBodyUpdate bookingBodyUpdate = BookingBodyUpdate.getInstance();
         Response response = UpdateExistingBookingRequest.newUpdateExistingBookingRequest(bookingBodyUpdate);
         Assert.assertEquals(response.getStatusCode(), 200);
+        Assert.assertEquals(response.jsonPath().getString("firstname"), "Shakira");
+        Assert.assertEquals(response.jsonPath().getString("lastname"), "Colombia");
     }
 }
