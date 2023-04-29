@@ -70,5 +70,6 @@ public class BookingRestFullTest {
         Assert.assertEquals(response.getStatusCode(), 200);
         Assert.assertEquals(response.jsonPath().getString("firstname"), "Shakira");
         Assert.assertEquals(response.jsonPath().getString("lastname"), "Colombia");
+        Assert.assertTrue(response.jsonPath().getBoolean("depositpaid"), "Deposit paid is true");
     }
 }
