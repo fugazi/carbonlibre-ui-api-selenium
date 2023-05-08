@@ -4,28 +4,28 @@ import static io.restassured.RestAssured.given;
 
 import io.restassured.response.Response;
 
-import com.api.tests.booking.bodys.BookingBodyUpdate;
+import com.api.tests.booking.bodys.BookingPartialBodyUpdate;
 
-public class UpdateExistingBookingRequest {
+public class UpdatePartialBookingRequest {
     private static final String BASE_URI = "https://restful-booker.herokuapp.com";
-    private static final String TOKEN = "e26c8325119f015";
-    private static final String BOOKING_ID = "1319";
+    private static final String TOKEN = "dc51f105465b877";
+    private static final String BOOKING_ID = "28";
 
     /**
-     * This request will update an existing booking id
-     * Parameters: complete body request
+     * This request will update an partial booking id
+     * Parameters: firstname, lastname, totalprice, depositpaid
      */
-    public static Response newUpdateExistingBookingRequest(BookingBodyUpdate bookingBodyUpdate) {
+    public static Response newUpdatePartialBookingRequest(BookingPartialBodyUpdate bookingBodyUpdatePartial) {
         return given()
                 .header("Accept", "application/json")
                 .header("Content-Type", "application/json")
                 .cookie("token", TOKEN)
                 .baseUri(BASE_URI)
                 .pathParam("id", BOOKING_ID)
-                .body(bookingBodyUpdate)
+                .body(bookingBodyUpdatePartial)
                 .log()
                 .all()
-                .when().put("/booking/{id}")
+                .when().patch("/booking/{id}")
                 .then()
                 .and()
                 .log()
