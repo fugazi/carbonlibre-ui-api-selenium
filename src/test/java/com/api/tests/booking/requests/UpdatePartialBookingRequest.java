@@ -8,8 +8,8 @@ import com.api.tests.booking.bodys.BookingPartialBodyUpdate;
 
 public class UpdatePartialBookingRequest {
     private static final String BASE_URI = "https://restful-booker.herokuapp.com";
-    private static final String TOKEN = "dc51f105465b877";
-    private static final String BOOKING_ID = "1111";
+    private static final String TOKEN = "c5cb6dcbd170efc";
+    private static final String BOOKING_ID = "372";
 
     /**
      * This request will update an partial booking id
