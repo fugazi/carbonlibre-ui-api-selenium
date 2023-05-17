@@ -8,8 +8,8 @@ import com.api.tests.booking.bodys.BookingBodyUpdate;
 
 public class UpdateExistingBookingRequest {
     private static final String BASE_URI = "https://restful-booker.herokuapp.com";
-    private static final String TOKEN = "4fe3da2aa2462b8";
-    private static final String BOOKING_ID = "416";
+    private static final String TOKEN = "9cda91c9a03a80b";
+    private static final String BOOKING_ID = "391";
 
     /**
      * This request will update an existing booking id
