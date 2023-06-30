@@ -20,7 +20,7 @@
         <faker.version>1.0.2</faker.version>
         <rest-assured.version>5.3.1</rest-assured.version>
         <aspectj.version>1.9.19</aspectj.version>
-        <allure.version>2.23.0</allure.version>
+        <allure.version>2.22.2</allure.version>
         <lombok.version>1.18.28</lombok.version>
         <jackson-databind.version>2.15.2</jackson-databind.version>
     </properties>
