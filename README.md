@@ -98,3 +98,6 @@ TBA
   * Base Utility Class `BaseSetup.java` into folder `src\test\java\com\api\tests`
   * REST API Tests `RestfulApiTest.java` into folder `src\test\java\com\api\tests`
 * testName: `api.tests.carbonlibre.RestfulApiTest`
++
+* Display dependencies updates: `mvn versions:display-dependency-updates`
+* Update properties: `mvn versions:update-properties`
