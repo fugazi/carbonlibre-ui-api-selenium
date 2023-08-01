@@ -7,8 +7,9 @@ import org.testng.annotations.Test;
 
 public class BookingRestApiTest {
     private static final String BASE_URI = "https://restful-booker.herokuapp.com";
-    private static final String AUTH_TOKEN = "832ba230a683cf3";
-    private static final String BOOKING_ID = "1605";
+    private static final String AUTH_TOKEN = "242d6503be331ad";
+    private static final String BOOKING_ID = "839";
+    private static final String DELETE_BOOKING_ID = "1263";
 
     /**
      * Test to create an Authorization token for Booking API
@@ -166,7 +167,7 @@ public class BookingRestApiTest {
                 .header("Accept", "application/json")
                 .header("Cookie", "token=" + AUTH_TOKEN)
                 .baseUri(BASE_URI)
-                .when().delete("/booking/" + BOOKING_ID)
+                .when().delete("/booking/" + DELETE_BOOKING_ID)
                 .then().statusCode(201)
                 .and()
                 .assertThat().header("Content-Type", "text/plain; charset=utf-8")
