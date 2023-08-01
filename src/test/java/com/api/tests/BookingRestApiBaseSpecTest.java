@@ -8,9 +8,9 @@ import org.testng.annotations.Test;
 import com.api.tests.booking.baseSpec.BaseSpec;
 
 public class BookingRestApiBaseSpecTest {
-    private static final String AUTH_TOKEN = "f7f3a3008cb43dc";
-    private static final String BOOKING_ID = "818";
-    private static final String DELETE_BOOKING_ID = "320";
+    private static final String AUTH_TOKEN = "103398d5f867dee";
+    private static final String BOOKING_ID = "8284";
+    private static final String DELETE_BOOKING_ID = "1103";
 
     /**
      * Test to create an Authorization token for Booking API
