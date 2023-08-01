@@ -6,8 +6,8 @@ import io.restassured.response.Response;
 
 public class DeleteBookingRequest {
     private static final String BASE_URI = "https://restful-booker.herokuapp.com";
-    private static final String TOKEN = "52d557b668aa9ee";
-    private static final String DELETE_BOOKING_ID = "185";
+    private static final String TOKEN = "6232db30bdea04e";
+    private static final String DELETE_BOOKING_ID = "1200";
 
     /**
      * This request will delete an existing booking id

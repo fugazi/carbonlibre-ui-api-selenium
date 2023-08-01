@@ -11,6 +11,7 @@ import com.api.tests.booking.bodys.BookingBodyUpdate;
 import com.api.tests.booking.bodys.BookingPartialBodyUpdate;
 import com.api.tests.booking.requests.CreateAuthTokenRequest;
 import com.api.tests.booking.requests.CreateBookingRequest;
+import com.api.tests.booking.requests.DeleteBookingRequest;
 import com.api.tests.booking.requests.GetAllBookingsRequest;
 import com.api.tests.booking.requests.GetBookingIdRequest;
 import com.api.tests.booking.requests.UpdateExistingBookingRequest;
@@ -87,5 +88,14 @@ public class BookingRestFullTest {
         Assert.assertEquals(response.jsonPath().get("lastname"), "Medellin");
         Assert.assertEquals(response.jsonPath().getLong("totalprice"), 1988);
         Assert.assertTrue(response.jsonPath().getBoolean("depositpaid"), "Deposit paid is true");
+    }
+
+    /**
+     * This test will delete an existing booking id and verify that the booking was deleted successfully.
+     */
+    @Test(description = "Regression Test")
+    void deleteBookingTest() {
+        Response response = DeleteBookingRequest.newDeleteBookingRequest();
+        Assert.assertEquals(response.getStatusCode(), 201);
     }
 }
