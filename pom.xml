@@ -19,7 +19,7 @@
         <slf4j.version>2.0.7</slf4j.version>
         <faker.version>1.0.2</faker.version>
         <rest-assured.version>5.3.1</rest-assured.version>
-        <aspectj.version>1.9.19</aspectj.version>
+        <aspectj.version>1.9.20</aspectj.version>
         <allure.version>2.23.0</allure.version>
         <lombok.version>1.18.28</lombok.version>
         <jackson-databind.version>2.15.2</jackson-databind.version>
@@ -87,9 +87,6 @@
                 <version>2.22.2</version>
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                    </argLine>
                     <systemProperties>
                         <property>
                             <name>allure.results.directory</name>
@@ -101,9 +98,10 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
-                        <scope>test</scope>
+                        <version>1.9.20</version>
+                        <scope>runtime</scope>
                     </dependency>
+
                 </dependencies>
             </plugin>
             <plugin>
