@@ -37,7 +37,7 @@ public class CategoriesTest {
     }
 
     @Test(description = "Smoke Test")
-    void testHomePage(){
+    void testHomePage() {
         categoriesPage = new CategoriesPage(driver);
         assertSoftly(softly -> softly.assertThat(categoriesPage.isLogoDisplayed())
                 .describedAs("Logo is displayed")
@@ -128,7 +128,6 @@ public class CategoriesTest {
                     .isTrue();
         });
     }
-
 
     @AfterTest
     void tearDown() {
