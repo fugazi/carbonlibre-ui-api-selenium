@@ -8,9 +8,9 @@ import org.testng.annotations.Test;
 import com.api.tests.booking.baseSpec.BaseSpec;
 
 public class BookingRestApiBaseSpecTest {
-    private static final String AUTH_TOKEN = "3e3eeac8df6e835";
-    private static final String BOOKING_ID = "234";
-    private static final String DELETE_BOOKING_ID = "513";
+    private static final String AUTH_TOKEN = "0ff598b62867508";
+    private static final String BOOKING_ID = "134";
+    private static final String DELETE_BOOKING_ID = "21";
 
     /**
      * Test to create an Authorization token for Booking API
@@ -128,6 +128,34 @@ public class BookingRestApiBaseSpecTest {
                 .assertThat().body("bookingdates.checkout", notNullValue())
                 .assertThat().body("additionalneeds", notNullValue())
                 .extract().response().prettyPrint();
+    }
+
+    /**
+     * Test to Update a Booking with Partial Data
+     * Call the VerifyRequestResponse class to verify the response
+     * This test is tied to BaseSpec
+     * @see BaseSpec
+     */
+    @Test(description = "Regression Test")
+    void testUpdateBookingPartialData() {
+        given()
+                .spec(BaseSpec.get(AUTH_TOKEN).build())
+                .body("{\n"
+                        + "    \"firstname\" : \"Shakira\",\n"
+                        + "    \"lastname\" : \"Medellin\",\n"
+                        + "    \"totalprice\" : 1985,\n"
+                        + "    \"depositpaid\" : true,\n"
+                        + "    \"bookingdates\" : {\n"
+                        + "        \"checkin\" : \"2023-01-01\",\n"
+                        + "        \"checkout\" : \"2023-04-27\"\n"
+                        + "    },\n"
+                        + "    \"additionalneeds\" : \"Breakfast\"\n"
+                        + "}")
+                .when().patch("/booking/" + BOOKING_ID)
+                .then().statusCode(200)
+                .and()
+                .extract().response().prettyPrint();
+        // VerifyRequestResponse.verify(response)
     }
 
     /**

@@ -4,6 +4,8 @@ import io.restassured.response.Response;
 
 import org.assertj.core.api.SoftAssertions;
 
+import com.api.tests.booking.responses.BookingResponse;
+
 public class VerifyRequestResponse {
     private final Response response;
     private final SoftAssertions softly;
@@ -31,11 +33,14 @@ public class VerifyRequestResponse {
     /**
      * This method verify the response body
      * @return this
+     * https://www.youtube.com/watch?v=3U_3SLOxnJg
+     * 4:56
      */
-    public VerifyRequestResponse bodyValue(String value) {
+    public VerifyRequestResponse hasBookingId(String bookingid) {
+        BookingResponse bookingResponse = response.as(BookingResponse.class);
         softly.assertThat(response.getBody().asString())
                 .describedAs("Verify response body")
-                .isEqualTo(value);
+                .isEqualTo(bookingid);
         return this;
     }
 
