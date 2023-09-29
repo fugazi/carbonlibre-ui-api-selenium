@@ -57,6 +57,7 @@ public class BookingRestApiBaseSpecTest {
      * Test to Get a Booking by ID
      * This test is tied to BaseSpec
      * @see BaseSpec
+     * Verify the response against the JSON schema
      */
     @Test(description = "Regression Test")
     void testGetBookingById() {
@@ -72,6 +73,7 @@ public class BookingRestApiBaseSpecTest {
                 .assertThat().body("bookingdates.checkin", notNullValue())
                 .assertThat().body("bookingdates.checkout", notNullValue())
                 .assertThat().body("additionalneeds", notNullValue())
+                .body(matchesJsonSchemaInClasspath("GetBookingById.json"))
                 .extract().response().prettyPrint();
     }
 
@@ -79,6 +81,7 @@ public class BookingRestApiBaseSpecTest {
      * Test to Create a Booking
      * This test is tied to BaseSpec
      * @see BaseSpec
+     * Verify the response against the JSON schema
      */
     @Test(description = "Regression Test")
     void testCreateBooking() {
@@ -99,6 +102,7 @@ public class BookingRestApiBaseSpecTest {
                 .then().statusCode(200)
                 .and()
                 .assertThat().body("bookingid", notNullValue())
+                .body(matchesJsonSchemaInClasspath("PostCreateBooking.json"))
                 .extract().response().prettyPrint();
     }
 
