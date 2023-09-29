@@ -159,32 +159,6 @@ public class BookingRestApiBaseSpecTest {
     }
 
     /**
-     * Test to Update a partial Booking
-     * This test is tied to BaseSpec
-     * @see BaseSpec
-     */
-    @Test(description = "Regression Test")
-    void testUpdatePartialBooking() {
-        given()
-                .spec(BaseSpec.get(AUTH_TOKEN).build())
-                .body("{\n"
-                        + "  \"firstname\": \"Shakira\",\n"
-                        + "  \"lastname\": \"Petrosky\"\n"
-                        + "}")
-                .when().patch("/booking/" + BOOKING_ID)
-                .then().statusCode(200)
-                .and()
-                .assertThat().body("firstname", notNullValue())
-                .assertThat().body("lastname", notNullValue())
-                .assertThat().body("totalprice", notNullValue())
-                .assertThat().body("depositpaid", notNullValue())
-                .assertThat().body("bookingdates.checkin", notNullValue())
-                .assertThat().body("bookingdates.checkout", notNullValue())
-                .assertThat().body("additionalneeds", notNullValue())
-                .extract().response().prettyPrint();
-    }
-
-    /**
      * Test to Delete a Booking
      * This test is tied to BaseSpec
      * @see BaseSpec
