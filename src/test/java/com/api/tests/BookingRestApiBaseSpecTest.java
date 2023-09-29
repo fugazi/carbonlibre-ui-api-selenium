@@ -1,6 +1,7 @@
 package com.api.tests;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 import org.testng.annotations.Test;
@@ -16,6 +17,7 @@ public class BookingRestApiBaseSpecTest {
      * Test to create an Authorization token for Booking API
      * This test is tied to BaseSpec
      * @see BaseSpec
+     * Verify the response against the JSON schema
      */
     @Test(description = "Regression Test")
     void testCreateAuthorizationToken() {
@@ -29,6 +31,7 @@ public class BookingRestApiBaseSpecTest {
                 .then().statusCode(200)
                 .and()
                 .assertThat().body("token", notNullValue())
+                .body(matchesJsonSchemaInClasspath("PostCreateAuthToken.json"))
                 .extract().response().prettyPrint();
     }
 
@@ -36,6 +39,7 @@ public class BookingRestApiBaseSpecTest {
      * Test to Get all Bookings by IDs
      * This test is tied to BaseSpec
      * @see BaseSpec
+     * Verify the response against the JSON schema
      */
     @Test(description = "Regression Test")
     void testGetAllBookings() {
@@ -45,6 +49,7 @@ public class BookingRestApiBaseSpecTest {
                 .then().statusCode(200)
                 .and()
                 .assertThat().body("bookingid[0]", notNullValue())
+                .body(matchesJsonSchemaInClasspath("GetAllBookings.json"))
                 .extract().response().prettyPrint();
     }
 
