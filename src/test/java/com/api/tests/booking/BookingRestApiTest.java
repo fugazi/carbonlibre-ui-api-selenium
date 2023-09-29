@@ -1,6 +1,7 @@
 package com.api.tests.booking;
 
 import static io.restassured.RestAssured.given;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
 import org.testng.annotations.Test;
@@ -28,6 +29,7 @@ public class BookingRestApiTest {
                 .then().statusCode(200)
                 .and()
                 .assertThat().body("token", notNullValue())
+                .body(matchesJsonSchemaInClasspath("PostCreateAuthToken.json"))
                 .extract().response().prettyPrint();
     }
 
@@ -44,6 +46,7 @@ public class BookingRestApiTest {
                 .then().statusCode(200)
                 .and()
                 .assertThat().body("bookingid[0]", notNullValue())
+                .body(matchesJsonSchemaInClasspath("GetAllBookings.json"))
                 .extract().response().prettyPrint();
     }
 
@@ -66,6 +69,7 @@ public class BookingRestApiTest {
                 .assertThat().body("bookingdates.checkin", notNullValue())
                 .assertThat().body("bookingdates.checkout", notNullValue())
                 .assertThat().body("additionalneeds", notNullValue())
+                .body(matchesJsonSchemaInClasspath("GetBookingById.json"))
                 .extract().response().prettyPrint();
     }
 
@@ -93,6 +97,7 @@ public class BookingRestApiTest {
                 .then().statusCode(200)
                 .and()
                 .assertThat().body("bookingid", notNullValue())
+                .body(matchesJsonSchemaInClasspath("PostCreateBooking.json"))
                 .extract().response().prettyPrint();
     }
 
@@ -127,6 +132,7 @@ public class BookingRestApiTest {
                 .assertThat().body("bookingdates.checkin", notNullValue())
                 .assertThat().body("bookingdates.checkout", notNullValue())
                 .assertThat().body("additionalneeds", notNullValue())
+                .body(matchesJsonSchemaInClasspath("PutUpdateBooking.json"))
                 .extract().response().prettyPrint();
     }
 
@@ -154,6 +160,7 @@ public class BookingRestApiTest {
                 .assertThat().body("bookingdates.checkin", notNullValue())
                 .assertThat().body("bookingdates.checkout", notNullValue())
                 .assertThat().body("additionalneeds", notNullValue())
+                .body(matchesJsonSchemaInClasspath("PatchUpdateBooking.json"))
                 .extract().response().prettyPrint();
     }
 
