@@ -9,9 +9,9 @@ import org.testng.annotations.Test;
 import com.api.tests.booking.baseSpec.BaseSpec;
 
 public class BookingRestApiBaseSpecTest {
-    private static final String AUTH_TOKEN = "cf2c55271b4d1bf";
-    private static final String BOOKING_ID = "146";
-    private static final String DELETE_BOOKING_ID = "107";
+    private static final String AUTH_TOKEN = "2186c4b6a046ba7";
+    private static final String BOOKING_ID = "3953";
+    private static final String DELETE_BOOKING_ID = "2215";
 
     /**
      * Test to create an Authorization token for Booking API
@@ -110,6 +110,7 @@ public class BookingRestApiBaseSpecTest {
      * Test to Update a Booking
      * This test is tied to BaseSpec
      * @see BaseSpec
+     * Verify the response against the JSON schema
      */
     @Test(description = "Regression Test")
     void testUpdateBooking() {
@@ -136,6 +137,7 @@ public class BookingRestApiBaseSpecTest {
                 .assertThat().body("bookingdates.checkin", notNullValue())
                 .assertThat().body("bookingdates.checkout", notNullValue())
                 .assertThat().body("additionalneeds", notNullValue())
+                .body(matchesJsonSchemaInClasspath("PutUpdateBooking.json"))
                 .extract().response().prettyPrint();
     }
 
@@ -144,6 +146,7 @@ public class BookingRestApiBaseSpecTest {
      * Call the VerifyRequestResponse class to verify the response
      * This test is tied to BaseSpec
      * @see BaseSpec
+     * Verify the response against the JSON schema
      */
     @Test(description = "Regression Test")
     void testUpdateBookingPartialData() {
@@ -162,6 +165,7 @@ public class BookingRestApiBaseSpecTest {
                         + "}")
                 .when().patch("/booking/" + BOOKING_ID)
                 .then().statusCode(200)
+                .body(matchesJsonSchemaInClasspath("PutUpdateBooking.json"))
                 .and()
                 .extract().response().prettyPrint();
         // VerifyRequestResponse.verify(response)

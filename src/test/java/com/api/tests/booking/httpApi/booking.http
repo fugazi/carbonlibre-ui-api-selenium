@@ -74,9 +74,9 @@ Accept: application/json
 #    },
 #    "additionalneeds" : "Breakfast"
 #}'
-PUT https://restful-booker.herokuapp.com/booking/3270
+PUT https://restful-booker.herokuapp.com/booking/538
 Accept: application/json
-Cookie: token=fb825c9ba3856cc
+Cookie: token=4c50347900d557d
 Content-Type: application/json
 
 {
@@ -101,9 +101,9 @@ Content-Type: application/json
 #    "firstname" : "James",
 #    "lastname" : "Brown"
 #}'
-PATCH https://restful-booker.herokuapp.com/booking/820
+PATCH https://restful-booker.herokuapp.com/booking/538
 Accept: application/json
-Cookie: token=4ce748d97298293
+Cookie: token=4c50347900d557d
 Content-Type: application/json
 
 {
@@ -116,8 +116,8 @@ Content-Type: application/json
 #  https://restful-booker.herokuapp.com/booking/1
 #  -H 'Content-Type: application/json'
 #  -H 'Cookie: token=abc123'
-DELETE https://restful-booker.herokuapp.com/booking/4508
-Cookie: token=fd403693015cd2a
+DELETE https://restful-booker.herokuapp.com/booking/538
+Cookie: token=4c50347900d557d
 Content-Type: application/json
 
 ###
