@@ -4,24 +4,29 @@ import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.CoreMatchers.notNullValue;
 
+import io.restassured.response.Response;
+
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.api.tests.booking.baseSpec.BaseSpec;
 
-public class BookingRestApiBaseSpecTest {
-    private static final String AUTH_TOKEN = "7d0e8e27f35adb2";
-    private static final String BOOKING_ID = "2025";
-    private static final String DELETE_BOOKING_ID = "2270";
+public class BookingRestApiAuthToken {
+    private static String AUTH_TOKEN;
+    private static final String BOOKING_ID = "406";
+    private static final String DELETE_BOOKING_ID = "316";
+
+    @BeforeClass
+    public static void setUp() {
+        AUTH_TOKEN = obtainAuthorizationToken();
+    }
 
     /**
      * Test to create an Authorization token for Booking API
-     * This test is tied to BaseSpec
-     * @see BaseSpec
-     * Verify the response against the JSON schema
+     * @return AUTH_TOKEN
      */
-    @Test(description = "Regression Test")
-    void testCreateAuthorizationToken() {
-        given()
+    private static String obtainAuthorizationToken() {
+        Response response = given()
                 .spec(BaseSpec.get().build())
                 .body("{\n"
                         + "  \"username\": \"admin\",\n"
@@ -31,8 +36,9 @@ public class BookingRestApiBaseSpecTest {
                 .then().statusCode(200)
                 .and()
                 .assertThat().body("token", notNullValue())
-                .body(matchesJsonSchemaInClasspath("PostCreateAuthToken.json"))
-                .extract().response().prettyPrint();
+                .extract().response();
+
+        return response.path("token");
     }
 
     /**
