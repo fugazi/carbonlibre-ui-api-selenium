@@ -29,10 +29,11 @@ public class BookingRestApiRefactorizedTest {
     private static String obtainAuthorizationToken() {
         Response response = given()
                 .spec(BaseSpec.get().build())
-                .body("{\n"
-                        + "  \"username\": \"admin\",\n"
-                        + "  \"password\": \"password123\"\n"
-                        + "}")
+                .body("""
+                        {
+                          "username": "admin",
+                          "password": "password123"
+                        }""")
                 .when().post("/auth")
                 .then().statusCode(200)
                 .and()
@@ -73,7 +74,7 @@ public class BookingRestApiRefactorizedTest {
      */
     @Test(description = "Regression Test", priority = 1)
     void testGetAllBookings() {
-        // Este test captura el bookingid en obtainBookingIdFromGetAllBookings
+        // This test get the bookingId to obtainBookingIdFromGetAllBookings
         given()
                 .spec(BaseSpec.get().build())
                 .when().get("/booking")
@@ -120,17 +121,18 @@ public class BookingRestApiRefactorizedTest {
     void testCreateBooking() {
         given()
                 .spec(BaseSpec.get().build())
-                .body("{\n"
-                        + "    \"firstname\" : \"Shakira\",\n"
-                        + "    \"lastname\" : \"Colombia\",\n"
-                        + "    \"totalprice\" : 111,\n"
-                        + "    \"depositpaid\" : true,\n"
-                        + "    \"bookingdates\" : {\n"
-                        + "        \"checkin\" : \"2023-01-01\",\n"
-                        + "        \"checkout\" : \"2023-04-27\"\n"
-                        + "    },\n"
-                        + "    \"additionalneeds\" : \"Breakfast\"\n"
-                        + "}")
+                .body("""
+                        {
+                            "firstname" : "Shakira",
+                            "lastname" : "Colombia",
+                            "totalprice" : 111,
+                            "depositpaid" : true,
+                            "bookingdates" : {
+                                "checkin" : "2023-01-01",
+                                "checkout" : "2023-04-27"
+                            },
+                            "additionalneeds" : "Breakfast"
+                        }""")
                 .when().post("/booking")
                 .then().statusCode(200)
                 .and()
@@ -150,17 +152,18 @@ public class BookingRestApiRefactorizedTest {
     void testUpdateBooking() {
         given()
                 .spec(BaseSpec.get(AUTH_TOKEN).build())
-                .body("{\n"
-                        + "    \"firstname\" : \"Shakira\",\n"
-                        + "    \"lastname\" : \"Medellin\",\n"
-                        + "    \"totalprice\" : 1985,\n"
-                        + "    \"depositpaid\" : true,\n"
-                        + "    \"bookingdates\" : {\n"
-                        + "        \"checkin\" : \"2023-01-01\",\n"
-                        + "        \"checkout\" : \"2023-04-27\"\n"
-                        + "    },\n"
-                        + "    \"additionalneeds\" : \"Breakfast\"\n"
-                        + "}")
+                .body("""
+                        {
+                            "firstname" : "Shakira",
+                            "lastname" : "Medellin",
+                            "totalprice" : 1985,
+                            "depositpaid" : true,
+                            "bookingdates" : {
+                                "checkin" : "2023-01-01",
+                                "checkout" : "2023-04-27"
+                            },
+                            "additionalneeds" : "Breakfast"
+                        }""")
                 .when().put("/booking/" + BOOKING_ID)
                 .then().statusCode(200)
                 .and()
@@ -187,17 +190,18 @@ public class BookingRestApiRefactorizedTest {
     void testUpdateBookingPartialData() {
         given()
                 .spec(BaseSpec.get(AUTH_TOKEN).build())
-                .body("{\n"
-                        + "    \"firstname\" : \"Shakira\",\n"
-                        + "    \"lastname\" : \"Medellin\",\n"
-                        + "    \"totalprice\" : 1985,\n"
-                        + "    \"depositpaid\" : true,\n"
-                        + "    \"bookingdates\" : {\n"
-                        + "        \"checkin\" : \"2023-01-01\",\n"
-                        + "        \"checkout\" : \"2023-04-27\"\n"
-                        + "    },\n"
-                        + "    \"additionalneeds\" : \"Breakfast\"\n"
-                        + "}")
+                .body("""
+                        {
+                            "firstname" : "Shakira",
+                            "lastname" : "Medellin",
+                            "totalprice" : 1985,
+                            "depositpaid" : true,
+                            "bookingdates" : {
+                                "checkin" : "2023-01-01",
+                                "checkout" : "2023-04-27"
+                            },
+                            "additionalneeds" : "Breakfast"
+                        }""")
                 .when().patch("/booking/" + BOOKING_ID)
                 .then().statusCode(200)
                 .body(matchesJsonSchemaInClasspath("PutUpdateBooking.json"))
