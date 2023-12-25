@@ -22,7 +22,7 @@
         <aspectj.version>1.9.21</aspectj.version>
         <allure.version>2.25.0</allure.version>
         <lombok.version>1.18.30</lombok.version>
-        <jackson-databind.version>2.16.0</jackson-databind.version>
+        <jackson-databind.version>2.16.1</jackson-databind.version>
         <json-schema-validator.version>5.4.0</json-schema-validator.version>
         <httpclient.version>4.5.14</httpclient.version>
     </properties>
