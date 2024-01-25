@@ -13,8 +13,8 @@ import com.api.tests.booking.baseSpec.BaseSpec;
 
 public class BookingRestApiAuthTokenTest {
     private static String AUTH_TOKEN;
-    private static final String BOOKING_ID = "406";
-    private static final String DELETE_BOOKING_ID = "316";
+    private static final String BOOKING_ID = "529";
+    private static final String DELETE_BOOKING_ID = "101";
 
     @BeforeClass
     public static void setUp() {
