@@ -101,3 +101,4 @@ TBA
 +
 * Display dependencies updates: `mvn versions:display-dependency-updates`
 * Update properties: `mvn versions:update-properties`
+* Execute Surefire Tests: `mvn surefire:test` and `mvn surefire-report:report` 
