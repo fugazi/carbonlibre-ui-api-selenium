@@ -21,10 +21,8 @@ public class SSLSession {
 
         /**
          * Create an SSL context that trusts each and every certificate (even those that are not signed).
-         *
-         * @return an "allow-all" certificates SSL context
          */
-        public static SSLContext sslContext() {
+        public static void sslContext() {
             final TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
                 public X509Certificate[] getAcceptedIssuers() {
                     return new X509Certificate[0];
@@ -49,7 +47,6 @@ public class SSLSession {
                 // set the  allTrusting verifier
                 HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
 
-                return sslContext;
             } catch (final NoSuchAlgorithmException | KeyManagementException exception) {
                 throw new RuntimeException("Failed to create a SSL socket factory", exception);
             }

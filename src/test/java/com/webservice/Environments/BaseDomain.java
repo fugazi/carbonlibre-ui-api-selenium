@@ -7,7 +7,7 @@ public class BaseDomain {
     /**
      * A map that stores global base URLs for different environments.
      */
-    private static final Map<Environment, String> GlobalBaseUrl = new HashMap();
+    private static final Map<Environment, String> GlobalBaseUrl = new HashMap<>();
 
     static {
         GlobalBaseUrl.put(Environment.QA, "qa-webservice.com");

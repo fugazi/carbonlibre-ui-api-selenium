@@ -5,7 +5,7 @@ public enum Environment {
     STAGING("staging"),
     PROD("prod");
 
-    private String environmentName;
+    private final String environmentName;
 
     /**
      * Constructor to initialize an Environment with a specific name.
