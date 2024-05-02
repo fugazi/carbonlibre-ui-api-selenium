@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import com.api.tests.booking.baseSpec.BaseSpec;
 
-public class BookingRestApiRefactorizedTest {
+public class BookingRestApiFactorizedTest {
     private static String AUTH_TOKEN;
     private static String BOOKING_ID;
 
