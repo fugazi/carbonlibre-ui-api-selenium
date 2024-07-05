@@ -13,19 +13,19 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>16</maven.compiler.target>
         <maven.compiler.source>16</maven.compiler.source>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
-        <selenium.version>4.21.0</selenium.version>
+        <maven-compiler-plugin.version>4.0.0-beta-1</maven-compiler-plugin.version>
+        <selenium.version>4.22.0</selenium.version>
         <assertj.version>3.26.0</assertj.version>
         <testng.version>7.10.2</testng.version>
         <slf4j.version>2.1.0-alpha1</slf4j.version>
         <faker.version>1.0.2</faker.version>
-        <rest-assured.version>5.4.0</rest-assured.version>
+        <rest-assured.version>5.5.0</rest-assured.version>
         <aspectj.version>1.9.22.1</aspectj.version>
         <allure.version>2.27.0</allure.version>
         <allure-maven.version>2.12.0</allure-maven.version>
-        <lombok.version>1.18.32</lombok.version>
-        <jackson-databind.version>2.17.1</jackson-databind.version>
-        <json-schema-validator.version>5.4.0</json-schema-validator.version>
+        <lombok.version>1.18.34</lombok.version>
+        <jackson-databind.version>2.17.2</jackson-databind.version>
+        <json-schema-validator.version>5.5.0</json-schema-validator.version>
         <httpclient.version>4.5.14</httpclient.version>
         <maven.surefire.plugin>3.2.5</maven.surefire.plugin>
         <maven.site.plugin>4.0.0-M4</maven.site.plugin>
