@@ -20,7 +20,7 @@
         <slf4j.version>2.1.0-alpha1</slf4j.version>
         <faker.version>1.0.2</faker.version>
         <rest-assured.version>5.5.0</rest-assured.version>
-        <aspectj.version>1.9.22.1</aspectj.version>
+        <aspectj.version>1.9.22</aspectj.version>
         <allure.version>2.29.1</allure.version>
         <allure-maven.version>2.12.0</allure-maven.version>
         <lombok.version>1.18.36</lombok.version>
@@ -124,7 +124,6 @@
                         <version>${aspectj.version}</version>
                         <scope>runtime</scope>
                     </dependency>
-
                 </dependencies>
             </plugin>
             <plugin>
