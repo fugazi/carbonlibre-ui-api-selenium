@@ -24,7 +24,7 @@
         <allure.version>2.29.1</allure.version>
         <allure-maven.version>2.12.0</allure-maven.version>
         <lombok.version>1.18.38</lombok.version>
-        <jackson-databind.version>2.19.1</jackson-databind.version>
+        <jackson-databind.version>2.19.0</jackson-databind.version>
         <json-schema-validator.version>5.5.5</json-schema-validator.version>
         <httpclient.version>4.5.14</httpclient.version>
         <maven.surefire.plugin>3.2.5</maven.surefire.plugin>
