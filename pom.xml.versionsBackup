@@ -14,22 +14,22 @@
         <maven.compiler.target>16</maven.compiler.target>
         <maven.compiler.source>16</maven.compiler.source>
         <maven-compiler-plugin.version>4.0.0-beta-2</maven-compiler-plugin.version>
-        <selenium.version>4.39.0</selenium.version>
+        <selenium.version>4.36.0</selenium.version>
         <assertj.version>4.0.0-M1</assertj.version>
         <testng.version>7.11.0</testng.version>
         <slf4j.version>2.1.0-alpha1</slf4j.version>
         <faker.version>1.0.2</faker.version>
-        <rest-assured.version>6.0.0</rest-assured.version>
-        <aspectj.version>1.9.25</aspectj.version>
-        <allure.version>2.32.0</allure.version>
-        <allure-maven.version>2.17.0</allure-maven.version>
+        <rest-assured.version>5.5.6</rest-assured.version>
+        <aspectj.version>1.9.24</aspectj.version>
+        <allure.version>2.30.0</allure.version>
+        <allure-maven.version>2.16.1</allure-maven.version>
         <lombok.version>1.18.42</lombok.version>
-        <jackson-databind.version>2.20.1</jackson-databind.version>
-        <json-schema-validator.version>6.0.0</json-schema-validator.version>
+        <jackson-databind.version>2.20.0</jackson-databind.version>
+        <json-schema-validator.version>5.5.6</json-schema-validator.version>
         <httpclient.version>4.5.14</httpclient.version>
         <maven.surefire.plugin>3.5.4</maven.surefire.plugin>
         <maven.site.plugin>4.0.0-M16</maven.site.plugin>
-        <maven-compiler-plugin.version>4.0.0-beta-3</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>4.0.0-beta-2</maven-compiler-plugin.version>
         <maven-surefire-report-plugin.version>3.5.4</maven-surefire-report-plugin.version>
     </properties>
 
