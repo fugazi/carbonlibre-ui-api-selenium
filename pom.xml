@@ -13,22 +13,22 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>16</maven.compiler.target>
         <maven.compiler.source>16</maven.compiler.source>
-        <selenium.version>4.41.0</selenium.version>
+        <selenium.version>4.43.0</selenium.version>
         <assertj.version>4.0.0-M1</assertj.version>
         <testng.version>7.12.0</testng.version>
         <slf4j.version>2.1.0-alpha1</slf4j.version>
         <faker.version>1.0.2</faker.version>
         <rest-assured.version>6.0.0</rest-assured.version>
         <aspectj.version>1.9.25.1</aspectj.version>
-        <allure.version>2.33.0</allure.version>
+        <allure.version>2.34.0</allure.version>
         <allure-maven.version>2.17.0</allure-maven.version>
-        <lombok.version>1.18.42</lombok.version>
-        <jackson-databind.version>2.21.1</jackson-databind.version>
+        <lombok.version>1.18.46</lombok.version>
+        <jackson-databind.version>2.21.3</jackson-databind.version>
         <json-schema-validator.version>6.0.0</json-schema-validator.version>
         <httpclient.version>4.5.14</httpclient.version>
         <maven.surefire.plugin>3.5.5</maven.surefire.plugin>
         <maven.site.plugin>4.0.0-M16</maven.site.plugin>
-        <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>4.0.0-beta-4</maven-compiler-plugin.version>
         <maven-surefire-report-plugin.version>3.5.5</maven-surefire-report-plugin.version>
     </properties>
 
